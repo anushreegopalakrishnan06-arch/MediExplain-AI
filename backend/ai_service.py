@@ -62,7 +62,7 @@ def generate_health_summary(structured_data: dict) -> dict:
     client = get_gemini_client()
     
     prompt = f"""
-    You are HealthLens AI, a helpful, patient-friendly AI companion.
+    You are mediExplain AI, a helpful, patient-friendly AI companion.
     Based on the following structured medical report data, generate a comprehensive summary, a voice script, and a personalized lifestyle plan.
     
     Data: {json.dumps(structured_data, indent=2)}

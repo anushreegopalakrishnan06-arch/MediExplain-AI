@@ -28,7 +28,7 @@ class UserLogin(BaseModel):
 load_dotenv()
 init_db()
 
-app = FastAPI(title="HealthLens AI API")
+app = FastAPI(title="mediExplain AI API")
 
 app.add_middleware(
     CORSMiddleware,
@@ -40,7 +40,7 @@ app.add_middleware(
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to HealthLens AI API"}
+    return {"message": "Welcome to mediExplain AI API"}
 
 @app.get("/api/health")
 def health_check():

@@ -20,7 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <aside className="w-64 bg-white border-r border-slate-200 flex flex-col hidden md:flex">
         <div className="p-6 flex items-center gap-3">
           <Activity className="text-blue-600 w-8 h-8" />
-          <span className="text-xl font-bold text-slate-800">HealthLens AI</span>
+          <span className="text-xl font-bold text-slate-800">mediExplain AI</span>
         </div>
         <nav className="flex-1 px-4 space-y-2">
           {navItems.map((item) => {
@@ -61,7 +61,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <header className="md:hidden bg-white border-b border-slate-200 p-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Activity className="text-blue-600 w-6 h-6" />
-            <span className="font-bold text-slate-800">HealthLens AI</span>
+            <span className="font-bold text-slate-800">mediExplain AI</span>
           </div>
           {user && (
             <button onClick={logout} className="p-2 text-slate-500 hover:text-red-600 rounded-lg transition-colors">

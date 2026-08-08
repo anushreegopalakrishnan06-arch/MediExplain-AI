@@ -2,7 +2,7 @@ import sqlite3
 import json
 import os
 
-DB_NAME = "healthlens.db"
+DB_NAME = "mediexplain.db"
 
 def init_db():
     conn = sqlite3.connect(DB_NAME)
