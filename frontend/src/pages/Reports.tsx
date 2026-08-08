@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FileText, ChevronRight } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 interface ReportInfo {
   id: number;
@@ -11,11 +12,16 @@ interface ReportInfo {
 export default function Reports() {
   const [reports, setReports] = useState<ReportInfo[]>([]);
   const [loading, setLoading] = useState(true);
+  const { token } = useAuth();
 
   useEffect(() => {
     const fetchReports = async () => {
       try {
-        const res = await fetch('/api/reports');
+        const res = await fetch('/api/reports', {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
         if (res.ok) {
           const data = await res.json();
           setReports(data);

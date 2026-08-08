@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Activity, User, Calendar, FileText, Play, Square } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import { useAuth } from '../context/AuthContext';
 
 interface ReportData {
   id: number;
@@ -30,6 +31,7 @@ export default function ReportDetail() {
   const { id } = useParams<{ id: string }>();
   const [report, setReport] = useState<ReportData | null>(null);
   const [loading, setLoading] = useState(true);
+  const { token } = useAuth();
   const [error, setError] = useState<string | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -67,7 +69,11 @@ export default function ReportDetail() {
   useEffect(() => {
     const fetchReport = async () => {
       try {
-        const res = await fetch(`/api/reports/${id}`);
+        const res = await fetch(`/api/reports/${id}`, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
         if (!res.ok) {
           throw new Error('Report not found');
         }

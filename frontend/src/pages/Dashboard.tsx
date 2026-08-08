@@ -1,11 +1,13 @@
 import React, { useState, useRef } from 'react';
 import { UploadCloud, CheckCircle, Loader2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 export default function Dashboard() {
   const [isDragging, setIsDragging] = useState(false);
   const [file, setFile] = useState<File | null>(null);
   const [isUploading, setIsUploading] = useState(false);
+  const { token, user } = useAuth();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
@@ -19,6 +21,9 @@ export default function Dashboard() {
     try {
       const response = await fetch('/api/reports/upload', {
         method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
         body: formData,
       });
       
@@ -64,7 +69,7 @@ export default function Dashboard() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <header>
-        <h1 className="text-3xl font-bold text-slate-900">Welcome back, Lakshmi</h1>
+        <h1 className="text-3xl font-bold text-slate-900">Welcome back, {user?.name || 'User'}</h1>
         <p className="text-slate-500 mt-1">Upload a medical report to get AI-powered insights.</p>
       </header>
 
