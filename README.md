@@ -1,29 +1,51 @@
-# <!-- Team name --> · Tech for Good 2026
+# mediExplain AI · Tech for Good 2026
 
-Team repository for **Build with AI: Code for Communities** — GDG Coimbatore
-(hackathon **Aug 8–9, 2026**, GRD College).
+**Team:** 290 - AI Rangers
 
-Everything your team does lives here from day one: the proposal, code, docs, and
-progress. Organizers follow along through this repo, so keep it active.
+**Live Demo URL:** [Please provide your Vercel URL here]
 
-## Start here
-1. **Fill in [`PROPOSAL.md`](./PROPOSAL.md)** and commit it by **Jul 24, 11:59 PM IST**. That's your Ideation-Phase submission.
-2. **Add your teammates** as collaborators (Settings → Collaborators), or ask your organizer to add them by GitHub username.
-3. **Build in the open** — commit early and often. Put source in `/src`, notes and diagrams in `/docs`.
+## Overview
+mediExplain AI is a patient-friendly platform that analyzes complex medical reports and explains them in simple language. It provides an overall health summary, highlights key findings, offers personalized lifestyle recommendations, and includes an AI chat assistant (Toe) to answer patient questions about their reports in both English and Tamil.
 
-## Repo layout
-| Path | For |
-|------|-----|
-| `PROPOSAL.md` | Your architecture proposal (the submission) |
-| `/src` | Application code |
-| `/docs` | Design notes, diagrams, research |
-| Issues | Track tasks; use the **Progress update** template for weekly check-ins |
+## Architecture
+- **Frontend:** React, Vite, TypeScript, TailwindCSS
+- **Backend:** Python, FastAPI, SQLite
+- **AI Integration:** Google Gemini API for medical report analysis and chat
 
-## Ground rules
-- Teams are **2–4 people**.
-- Keep the repo **public** — it's part of the open-source, tech-for-good spirit and helps judging.
-- Use the four SDG tracks; build something that helps a real community.
+## How to run locally
 
-Questions? Ping the organizers in the mixer WhatsApp group or open an issue.
+### Backend Setup
+1. Navigate to the `backend` directory:
+   ```bash
+   cd backend
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Create a `.env` file in the `backend` folder with your Gemini API key:
+   ```
+   GEMINI_API_KEY="your_actual_gemini_api_key_here"
+   ```
+4. Start the server:
+   ```bash
+   uvicorn main:app --reload
+   ```
 
-— GDG Coimbatore · TiE Kovai Con · GRD College · Startup Culture
+### Frontend Setup
+1. Navigate to the `frontend` directory:
+   ```bash
+   cd frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Create a `.env.local` file in the `frontend` folder to point to the local backend:
+   ```
+   VITE_API_URL="http://127.0.0.1:8000"
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
