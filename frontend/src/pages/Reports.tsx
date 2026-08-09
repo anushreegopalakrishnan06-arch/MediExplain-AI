@@ -9,6 +9,8 @@ interface ReportInfo {
   upload_date: string;
 }
 
+const API_URL = import.meta.env.VITE_API_URL || '';
+
 export default function Reports() {
   const [reports, setReports] = useState<ReportInfo[]>([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +19,7 @@ export default function Reports() {
   useEffect(() => {
     const fetchReports = async () => {
       try {
-        const res = await fetch('/api/reports', {
+        const res = await fetch(`${API_URL}/api/reports`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }

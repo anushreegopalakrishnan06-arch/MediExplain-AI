@@ -3,6 +3,8 @@ import { UploadCloud, CheckCircle, Loader2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
+const API_URL = import.meta.env.VITE_API_URL || '';
+
 export default function Dashboard() {
   const [isDragging, setIsDragging] = useState(false);
   const [file, setFile] = useState<File | null>(null);
@@ -19,7 +21,7 @@ export default function Dashboard() {
     formData.append('file', file);
 
     try {
-      const response = await fetch('/api/reports/upload', {
+      const response = await fetch(`${API_URL}/api/reports/upload`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`

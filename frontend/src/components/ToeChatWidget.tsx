@@ -8,6 +8,8 @@ interface ChatMessage {
   content: string;
 }
 
+const API_URL = import.meta.env.VITE_API_URL || '';
+
 export default function ToeChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([{
@@ -37,7 +39,7 @@ export default function ToeChatWidget() {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/toe/chat', {
+      const res = await fetch(`${API_URL}/api/toe/chat`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

@@ -10,6 +10,8 @@ interface LifestylePlan {
   exercises?: string;
 }
 
+const API_URL = import.meta.env.VITE_API_URL || '';
+
 export default function Wellness() {
   const [loading, setLoading] = useState(true);
   const [lifestylePlan, setLifestylePlan] = useState<LifestylePlan | null>(null);
@@ -18,7 +20,7 @@ export default function Wellness() {
   useEffect(() => {
     const fetchLatestWellness = async () => {
       try {
-        const listRes = await fetch('/api/reports', {
+        const listRes = await fetch(`${API_URL}/api/reports`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -29,7 +31,7 @@ export default function Wellness() {
         if (reportsList && reportsList.length > 0) {
           // Get the most recent report (assuming backend sorts by date descending)
           const latestId = reportsList[0].id;
-          const detailRes = await fetch(`/api/reports/${latestId}`, {
+          const detailRes = await fetch(`${API_URL}/api/reports/${latestId}`, {
             headers: {
               'Authorization': `Bearer ${token}`
             }

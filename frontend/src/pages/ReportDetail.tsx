@@ -27,6 +27,8 @@ interface ReportData {
   };
 }
 
+const API_URL = import.meta.env.VITE_API_URL || '';
+
 export default function ReportDetail() {
   const { id } = useParams<{ id: string }>();
   const [report, setReport] = useState<ReportData | null>(null);
@@ -69,7 +71,7 @@ export default function ReportDetail() {
   useEffect(() => {
     const fetchReport = async () => {
       try {
-        const res = await fetch(`/api/reports/${id}`, {
+        const res = await fetch(`${API_URL}/api/reports/${id}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
