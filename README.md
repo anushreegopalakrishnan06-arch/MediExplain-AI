@@ -2,7 +2,7 @@
 
 **Team:** 290 - AI Rangers
 
-**Live Demo URL:** [Please provide your Vercel URL here]
+**Live Demo URL:** https://medi-explain-ai-eta.vercel.app/
 
 ## Overview
 mediExplain AI is a patient-friendly platform that analyzes complex medical reports and explains them in simple language. It provides an overall health summary, highlights key findings, offers personalized lifestyle recommendations, and includes an AI chat assistant (Toe) to answer patient questions about their reports in both English and Tamil.
