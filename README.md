@@ -7,27 +7,27 @@
 ## Overview
 mediExplain AI is a patient-friendly platform that analyzes complex medical reports and explains them in simple language. It provides an overall health summary, highlights key findings, offers personalized lifestyle recommendations, and includes an AI chat assistant (Toe) to answer patient questions about their reports in both English and Tamil.
 
-## Application Preview
+## Application View
 
 ### Report Upload
 Upload medical reports in PDF, JPG, or PNG format to begin an AI-powered analysis.
 
-![Report upload dashboard](https://github.com/user-attachments/assets/PLACEHOLDER_IMAGE_3)
+![Report upload dashboard](docs/application-view/dashboard-upload.png)
 
 ### AI-Powered Report Analysis
 The report view provides an AI summary, test parameters, reference ranges, and status indicators to help users understand their results.
 
-![AI report analysis](https://github.com/user-attachments/assets/PLACEHOLDER_IMAGE_2)
+![AI report analysis](docs/application-view/report-analysis.png)
 
 ### Personalized Wellness Plan
 Get practical recommendations for sleep, nutrition, diet, and exercise based on the user's latest report.
 
-![Personalized wellness plan](https://github.com/user-attachments/assets/PLACEHOLDER_IMAGE_4)
+![Personalized wellness plan](docs/application-view/wellness-plan.png)
 
 ### Ask Toe — AI Health Assistant
 Toe can answer questions about the analyzed report, provide context for health values, and explain reference ranges in plain language.
 
-![AI assistant chat in the wellness dashboard](https://github.com/user-attachments/assets/PLACEHOLDER_IMAGE_1)
+![AI assistant chat in the wellness dashboard](docs/application-view/toe-assistant.png)
 
 ## Architecture
 - **Frontend:** React, Vite, TypeScript, TailwindCSS
